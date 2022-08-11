@@ -1,0 +1,12 @@
+resource_group_name="MyAzureResourceGroup"
+app_tags = {
+  Client  = "Me",
+  Project = "Myself",
+  Owner   = "I"
+}
+app_service_plan_name="ASP-APIM-APIOps"
+app_service_name="AS-APIM-APIOps"
+
+# This configuration allows me to override the default nginx configuration on the App Service
+# See https://www.azurephp.dev/2021/09/php-8-on-azure-app-service/ for more details
+app_command_line="cp config/nginx.default /etc/nginx/sites-available/default && service nginx restart"
